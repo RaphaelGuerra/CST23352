@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Android Labs</string>
+    <string name="emailAddress">Entre o seu email: </string>
+    <string name="typePass">Digite seu password: </string>
+    <string name="emailHint">Digite seu email</string>
+    <string name="btnAbove">Clique no botão acima parar tirar uma foto</string>
+    <string name="YourEmail">Seu email: </string>
+    <string name="pic">Sua foto: </string>
+    <string name="EnterYourName">Digite seu nome: </string>
+    <string name="YourName">Seu nome: </string>
+    <string name="YourProfile">Seu perfil</string>
+    <string name="login">Logar</string>
+    <string name="picContent">Foto da Câmera</string>
+</resources>
