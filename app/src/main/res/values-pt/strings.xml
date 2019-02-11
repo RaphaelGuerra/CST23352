@@ -12,4 +12,8 @@
     <string name="YourProfile">Seu perfil</string>
     <string name="login">Logar</string>
     <string name="picContent">Foto da Câmera</string>
+    <string name="goChat">Vá para o chat</string>
+    <string name="sendButton">ENVIAR</string>
+    <string name="receiveButton">RECEBER</string>
+    <string name="message">Digite aqui</string>
 </resources>

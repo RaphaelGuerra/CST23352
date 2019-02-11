@@ -7,11 +7,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
 public class ProfileActivity extends AppCompatActivity {
     private ImageButton imageButton;
+    private Button goChat;
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final String ACTIVITY_NAME = "PROFILE_ACTIVITY";
 
@@ -28,6 +30,14 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 dispatchTakePictureIntent();
+            }
+        });
+        goChat = findViewById(R.id.goChat);
+        goChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent nextPage = new Intent(ProfileActivity.this, ChatRoomActivity.class);
+                startActivity(nextPage);
             }
         });
         Log.e(ACTIVITY_NAME,"In function: onCreate");

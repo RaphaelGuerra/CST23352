@@ -12,4 +12,8 @@
     <string name="YourProfile">Your profile</string>
     <string name="login">Login</string>
     <string name="picContent">Camera Picture</string>
+    <string name="goChat">Go to chat</string>
+    <string name="sendButton">SEND</string>
+    <string name="receiveButton">RECEIVE</string>
+    <string name="message">Type here</string>
 </resources>
