@@ -1,8 +1,10 @@
 package com.example.cst2335;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +21,7 @@ public class ChatRoomActivity extends AppCompatActivity {
     EditText message;
     Button  send, receive;
     List<Message> messageList;
+    DatabaseHelper db;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,30 +33,57 @@ public class ChatRoomActivity extends AppCompatActivity {
         send = findViewById(R.id.sendButton);
         receive = findViewById(R.id.receiveButton);
         messageList = new ArrayList<>();
+        db = new DatabaseHelper(this);
 
-        final ListAdapter aListAdapter = new ListAdapter(messageList, getApplicationContext());
-        myList.setAdapter( aListAdapter);
+
+//        final ListAdapter aListAdapter = new ListAdapter(messageList, getApplicationContext());
+//        myList.setAdapter( aListAdapter);
 
         send.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Message msg = new Message(message.getText().toString(), true);
-                messageList.add(msg);
-                message.setText("");
-                aListAdapter.notifyDataSetChanged();
+//                Message msg = new Message(message.getText().toString(), true);
+//                messageList.add(msg);
+//                message.setText("");
+//                aListAdapter.notifyDataSetChanged();
+                if (!message.getText().toString().equals("")) {
+                    db.insertData(message.getText().toString(), true);
+                    message.setText("");
+                    messageList.clear();
+                    viewData();
+                }
             }
         });
 
         receive.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Message msg = new Message(message.getText().toString(), false);
-                messageList.add(msg);
-                message.setText("");
-                aListAdapter.notifyDataSetChanged();
+//                Message msg = new Message(message.getText().toString(), false);
+//                messageList.add(msg);
+//                message.setText("");
+//                aListAdapter.notifyDataSetChanged();
+                if (!message.getText().toString().equals("")) {
+                    db.insertData(message.getText().toString(), false);
+                    message.setText("");
+                    messageList.clear();
+                    viewData();
+                }
             }
         });
+        viewData();
+        Log.e("ChatRoomActivity","onCreate");
+    }
 
+    private void viewData(){
+        Cursor cursor = db.viewData();
+        if (cursor.getCount() != 0){
+            while (cursor.moveToNext()){
+                Message msg = new Message(cursor.getString(1), cursor.getInt(2) == 0);
+                messageList.add(msg);
+                ListAdapter listAdapter = new ListAdapter(messageList, getApplicationContext());
+                myList.setAdapter(listAdapter);
+            }
+        }
     }
 
     private class ListAdapter extends BaseAdapter {
