@@ -16,4 +16,11 @@
     <string name="sendButton">ENVIAR</string>
     <string name="receiveButton">RECEBER</string>
     <string name="message">Digite aqui</string>
+    <string name="goToolbar">Va para a Toolbar</string>
+    <string name="icon1">Icone 1</string>
+    <string name="icon2">Icone 2</string>
+    <string name="icon3">Icone 3</string>
+    <string name="about">SOBRE</string>
+    <string name="newMessage">What is the new message?</string>
+    <string name="typeHere">You can type here</string>
 </resources>
