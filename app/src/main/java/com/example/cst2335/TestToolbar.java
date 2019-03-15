@@ -1,25 +1,20 @@
 package com.example.cst2335;
 
-import android.content.ClipData;
 import android.content.DialogInterface;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 public class TestToolbar extends AppCompatActivity {
     android.support.v7.widget.Toolbar myToolbar;
     String newMessage = "This is the initial message";
-    Toolbar myToolBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +48,7 @@ public class TestToolbar extends AppCompatActivity {
                 break;
             case R.id.icon3:
                 Snackbar sb = Snackbar.make(myToolbar, "Go Back?", Snackbar.LENGTH_LONG)
-                        .setAction("Action text", new View.OnClickListener() {
+                        .setAction(R.string.about, new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
                                 finish();
@@ -83,7 +78,7 @@ public class TestToolbar extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int id) {
                         // What to do on Cancel
                     }
-                }).setView(middle);
+                })  .setView(middle);
         builder.create().show();
     }
 }
