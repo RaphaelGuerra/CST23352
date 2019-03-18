@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class TestToolbar extends AppCompatActivity {
     android.support.v7.widget.Toolbar myToolbar;
-    String newMessage = "This is the initial message";
+    String newMessage = " ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class TestToolbar extends AppCompatActivity {
         myToolbar = findViewById(R.id.myToolbar);
 
         setSupportActionBar(myToolbar);
+        newMessage = getString(R.string.testToolbarInitialMessage);
     }
 
 
@@ -47,8 +48,8 @@ public class TestToolbar extends AppCompatActivity {
                 alertExample();
                 break;
             case R.id.icon3:
-                Snackbar sb = Snackbar.make(myToolbar, "Go Back?", Snackbar.LENGTH_LONG)
-                        .setAction(R.string.about, new View.OnClickListener() {
+                Snackbar sb = Snackbar.make(myToolbar, getString(R.string.testToolbarAction), Snackbar.LENGTH_LONG)
+                        .setAction(R.string.testToolbarYes, new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
                                 finish();
@@ -57,7 +58,7 @@ public class TestToolbar extends AppCompatActivity {
                 sb.show();
                 break;
             case R.id.icon4:
-                Toast.makeText(this, "You clicked on the overflow menu", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.testToolbarOverflowMenu), Toast.LENGTH_SHORT).show();
                 break;
         }
         return true;
@@ -69,12 +70,12 @@ public class TestToolbar extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         builder.setMessage("")
-                .setPositiveButton("Positive", new DialogInterface.OnClickListener() {
+                .setPositiveButton(getString(R.string.testToolbarPositive), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         newMessage = newMessageET.getText().toString();
                     }
                 })
-                .setNegativeButton("Negative", new DialogInterface.OnClickListener() {
+                .setNegativeButton(getString(R.string.testToolbarNegative), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // What to do on Cancel
                     }

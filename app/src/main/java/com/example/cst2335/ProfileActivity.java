@@ -15,6 +15,7 @@ public class ProfileActivity extends AppCompatActivity {
     private ImageButton imageButton;
     private Button goChat;
     private Button goToolbar;
+    public Button weatherForecast;
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final String ACTIVITY_NAME = "PROFILE_ACTIVITY";
 
@@ -46,6 +47,14 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent nextPage = new Intent(ProfileActivity.this, TestToolbar.class);
+                startActivity(nextPage);
+            }
+        });
+        weatherForecast = findViewById(R.id.goWeatherForecast);
+        weatherForecast.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent nextPage = new Intent(ProfileActivity.this, WeatherForecast.class);
                 startActivity(nextPage);
             }
         });

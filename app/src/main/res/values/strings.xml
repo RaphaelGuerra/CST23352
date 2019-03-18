@@ -23,4 +23,15 @@
     <string name="about">ABOUT</string>
     <string name="newMessage">What is the new message?</string>
     <string name="typeHere">You can type here</string>
+    <string name="testToolbarInitialMessage">This is the initial message</string>
+    <string name="testToolbarAction">Go back?</string>
+    <string name="testToolbarOverflowMenu">You clicked on the overflow menu</string>
+    <string name="testToolbarPositive">Positive</string>
+    <string name="testToolbarNegative">Negative</string>
+    <string name="testToolbarYes">YES</string>
+    <string name="goWeatherForecast">Go to Weather Forecast</string>
+    <string name="currTemp">Current temperature is:</string>
+    <string name="minTemp">Minimum temperature is:</string>
+    <string name="maxTemp">Maximum temperature is:</string>
+    <string name="uvRating">UV rating is:</string>
 </resources>
